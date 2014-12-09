@@ -1,28 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+It is a Rails App where users can login and post reviews and rate latest movies, games, books, etc.
 
-Things you may want to cover:
+== ROADMAP:
 
-* Ruby version
+1. Add Database Support for Users
 
-* System dependencies
+2. Add Posts functionality
 
-* Configuration
+3. Get information about latest movies, games, etc. and make a single page for each where a user can read reviews about that particular entity at a single go.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+4. Add better UI
