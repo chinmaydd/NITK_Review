@@ -1,0 +1,18 @@
+<% @page_title = 'User' %>
+
+<div>
+  <h2>Create User</h2>
+
+  <%= form_for(:user, url: {action: 'create'}) do |f| %>
+
+    <%= render(partial: 'form', locals: {f: f} ) %>
+
+  <%= submit_tag('Create User') %>
+
+  <br>
+  <br>
+  
+  <%= link_to("See all usernames", {action: 'index'}) %>
+
+  <% end %>
+</div>

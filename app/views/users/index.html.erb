@@ -1,0 +1,19 @@
+<div class="uploads index">
+  <h2>Users</h2>
+
+  <table summary="Upload list">
+    <tr class="header">
+      <th>User Name</th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.username %></td>
+    </tr>
+    <% end %>
+  </table>
+
+<%= link_to(" New User", {action: 'new'}) %>
+<br>
+<br>
+<br>
+</div>
