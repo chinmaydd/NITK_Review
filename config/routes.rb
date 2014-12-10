@@ -1,6 +1,6 @@
   Rails.application.routes.draw do
   
-  root "users#new"
+  root "users#home"
   match ':controller(/:action(/:id))', :via => [:get, :post]
 
   
