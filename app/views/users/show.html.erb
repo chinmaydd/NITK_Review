@@ -1,0 +1,16 @@
+<div class="file show">
+	<h2>User information</h2>
+
+	<table summary="File detail view">
+		<tr>
+			<th>Name</th>
+			<td><%= @user.first_name + ' ' + @user.last_name %></td>
+		</tr>
+		<tr>
+			<th>Username</th>
+			<td><%= @user.username %></td>
+<!-- Put number of reviews here -->
+	</table>
+	<%= link_to("Back to Users list", {action: 'index'}) %>
+</div>
+

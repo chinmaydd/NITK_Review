@@ -1,13 +1,13 @@
-<div class="uploads index">
+<div class="users index">
   <h2>Users</h2>
 
-  <table summary="Upload list">
+  <table summary="Users list">
     <tr class="header">
       <th>User Name</th>
     </tr>
     <% @users.each do |user| %>
     <tr>
-      <td><%= user.username %></td>
+      <td><%= link_to( user.username , {action: 'show', id: user.id}) %></td>
     </tr>
     <% end %>
   </table>
