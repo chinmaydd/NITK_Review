@@ -4,10 +4,12 @@ It is a Rails App where users can login and post reviews and rate latest movies,
 
 == ROADMAP:
 
-1. Add Database Support for Users
+1. Add Database Support for Users(With Gravatars)
 
-2. Add Posts functionality
+2. Add Posts functionality(With Upvoting and Downvoting)
 
 3. Get information about latest movies, games, etc. and make a single page for each where a user can read reviews about that particular entity at a single go.
 
-4. Add better UI
+4. Add better UI(Prefereably Polymer.js theme)
+
+> To do : Data Validation of username, id and Password
