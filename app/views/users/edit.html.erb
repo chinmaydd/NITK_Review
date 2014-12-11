@@ -1,7 +1,7 @@
 <div class="users edit">
   <h1>Update Users</h1>
 
-<%= form_for(:user, url: {:action => 'update', id: @user.id}) do |f| %>
+<%= form_for(:user, url: {action: 'update', id: @user.id}) do |f| %>
 
 <table summary="User form fields">
   <tr>
@@ -24,11 +24,13 @@
     <th><%= f.label(:password) %></th>
     <td><%= f.password_field(:password) %></td>
   </tr>
-</table>
 
+</table>
 
 <%= submit_tag("Update User") %>
 
-<%end %>
+<%= link_to('Delete User', {action: 'destroy', id: @user.id}) %>
+
+<% end %>
 
 </div>

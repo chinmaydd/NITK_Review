@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @current_user = User.find(session[:user_id])
   end
 
   def create
@@ -49,6 +50,28 @@ class UsersController < ApplicationController
     session[:username] = nil
     flash[:notice] = "You are now logged out"
     render('home')
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_param)
+      flash[:notice] = "Data Updated Succesfully"
+      redirect_to(action: 'show' , id: @user.id)
+    else
+      render('edit')
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    session[:user_id] = nil
+    session[:username] = nil
+    redirect_to(action: 'home')
   end
 
   private

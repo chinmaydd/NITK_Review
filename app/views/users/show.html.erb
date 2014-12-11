@@ -11,6 +11,11 @@
 			<td><%= @user.username %></td>
 <!-- Put number of reviews here -->
 	</table>
+	
+	<% if @user==@current_user %>
+		<%= link_to("Edit Data", {action: 'edit', id: @user.id}) %>
+	<% end %>
+
 	<%= link_to("Back to Users list", {action: 'index'}) %>
 </div>
 
