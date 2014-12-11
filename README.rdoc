@@ -12,4 +12,6 @@ It is a Rails App where users can login and post reviews and rate latest movies,
 
 4. Add better UI(Prefereably Polymer.js theme)
 
+5. Add Admin User to the Web Application
+
 > To do : Data Validation of username, id and Password
