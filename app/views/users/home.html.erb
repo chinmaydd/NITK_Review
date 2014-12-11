@@ -4,7 +4,7 @@
 
 <% if session[:user_id]!=nil %>
 
-<%= link_to(" Go to Users Index", {:action => 'index'}) %>
+<%= link_to(" Go to Users Index", {action: 'index'}) %>
 
 <% end %>
 
@@ -12,7 +12,7 @@
 
 <br><h2>User Login here</h2>
 
-<%= form_for(:user, url: {:action => 'attempt_login'}) do |f| %>
+<%= form_for(:user, url: {action: 'attempt_login'}) do |f| %>
 
 <table summary="User login field">
   <tr>

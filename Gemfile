@@ -31,6 +31,9 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
 
+ gem 'validates_email_format_of'
+ #Gem to validate email ids
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
