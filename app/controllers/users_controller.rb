@@ -18,6 +18,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_param)
     if @user.save
+      session[:user_id] = @user.id
+      session[:username] = @user.username
       redirect_to(action: 'index')#change to posts
     else
       render("new")
