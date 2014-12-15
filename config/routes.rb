@@ -1,6 +1,10 @@
   Rails.application.routes.draw do
   
-  root "users#home"
+  get 'movie/dashboard'
+
+  get 'movies/dashboard'
+
+  root "movies#dashboard"
   match ':controller(/:action(/:id))', :via => [:get, :post]
 
   

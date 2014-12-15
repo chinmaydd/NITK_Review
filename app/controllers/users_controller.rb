@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       session[:username] = @user.username
-      redirect_to(action: 'index')#change to posts
+      redirect_to(controller: 'movies', action: 'dashboard')#change to posts
     else
       render("new")
     end
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
       session[:user_id] = authorized_user.id
       session[:username] = authorized_user.username
       flash[:notice] = "You are now logged in."
-      redirect_to(action: 'index')
+      redirect_to(controller: 'movies', action: 'dashboard')
     else
       flash[:notice] = "Invalid username/password combination."
       redirect_to(action: 'home')

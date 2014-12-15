@@ -4,14 +4,10 @@ It is a Rails App where users can login and post reviews and rate latest movies,
 
 == ROADMAP:
 
-1. Add Database Support for Users(With Gravatars)
+1. Add Reviews Feature for each Movie in Mangalore ( /movies/list )
 
-2. Add Posts functionality(With Upvoting and Downvoting)
+2. Add Navigation Bar for navigating throughout the Application
 
-3. Get information about latest movies, games, etc. and make a single page for each where a user can read reviews about that particular entity at a single go.
+3. Admin Functionality
 
-4. Add better UI(Prefereably Polymer.js theme)
-
-5. Add Admin User to the Web Application
-
-> To do : Data Validation of username, id and Password
+4. GUI improvement( Preferably Polymer.js )

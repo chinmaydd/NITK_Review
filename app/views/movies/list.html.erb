@@ -1,0 +1,9 @@
+<h1>Movie Listing in Mangalore</h1>
+
+<% @movie.each do |move| %>
+	<%= move %>
+	<br>
+<% end %>
+
+<%= link_to("Back to Dashboard", {action: 'dashboard'}) %>
+

@@ -4,7 +4,7 @@
 
 <% if session[:user_id]!=nil %>
 
-<%= link_to(" Go to Users Index", {action: 'index'}) %>
+<%= redirect_to(controller: 'movies', action: 'dashboard') %>
 
 <% end %>
 
