@@ -7,7 +7,7 @@
 <% @reviews.each do |rev| %>
 	<%= rev.user.username %>
 	<%= rev.comment %>
-	<% if rev.user.username==session[:username] %>
+	<% if rev.user.username==session[:username]||@user.admin? %>
 		<%= link_to("Edit Review", {controller: 'reviews', action: 'edit', movie_id: @movie.id, id: rev.id}) %>
 		<% @flag = 1 %>
 	<% end %>

@@ -12,7 +12,7 @@
 <!-- Put number of reviews here -->
 	</table>
 	
-	<% if @user==@current_user %>
+	<% if @user==@current_user||@current_user.admin? %>
 		<%= link_to("Edit Data", {action: 'edit', id: @user.id}) %>
 	<% end %>
 
