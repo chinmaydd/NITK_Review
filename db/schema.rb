@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141215132308) do
+ActiveRecord::Schema.define(version: 20141216170637) do
 
   create_table "movies", force: true do |t|
     t.string   "name",       null: false
@@ -26,21 +26,18 @@ ActiveRecord::Schema.define(version: 20141215132308) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "movie_id"
+    t.integer  "votes"
   end
 
   create_table "users", force: true do |t|
-    t.string   "username",             limit: 25
-    t.string   "first_name",           limit: 25
-    t.string   "last_name",            limit: 50
-    t.string   "email",                           null: false
+    t.string   "username",        limit: 25
+    t.string   "first_name",      limit: 25
+    t.string   "last_name",       limit: 50
+    t.string   "email",                                      null: false
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
+    t.boolean  "admin",                      default: false
   end
-
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
 
 end

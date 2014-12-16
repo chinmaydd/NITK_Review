@@ -57,7 +57,7 @@ class ReviewsController < ApplicationController
     end
 
     def check_user
-      unless (@review.user.username == session[:username])
+      unless (@review.user.username == session[:username] || @review.user.admin?)
         redirect_to(action: 'show', controller: 'movies', id: @movie.id)
       end
     end

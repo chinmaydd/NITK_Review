@@ -70,10 +70,22 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
-    session[:user_id] = nil
-    session[:username] = nil
-    redirect_to(action: 'home')
+    @current_user = User.find(session[:user_id])
+    if @current_user.admin?
+      @user.destroy
+      redirect_to(action: 'list', controller: 'movies')
+    else
+      @reviews = Review.all
+      @reviews.each do |rev|
+        if rev.user.username==@user.username
+          rev.destroy
+        end
+      end
+      session[:user_id] = nil
+      session[:username] = nil
+      @user.destroy
+      redirect_to(action: 'home')
+    end
   end
 
   private
