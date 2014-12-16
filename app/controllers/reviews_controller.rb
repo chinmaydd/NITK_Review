@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 	before_action :confirm_logged_in
 	before_action :set_movie
-  before_action :set_review, only: [:update, :edit, :destroy]
+  before_action :set_review, only: [:update, :edit, :destroy, :upvote, :downvote]
   before_action :check_user, only: [:update, :edit, :destroy]
 
 	  def new 
@@ -17,6 +17,25 @@ class ReviewsController < ApplicationController
 
   	def edit
   	end
+
+    def upvote
+      @user = User.find(params[:user_id])
+      if @user.voted_for? @review
+        redirect_to(action: 'show', controller: 'movies', id: @movie.id)
+        return
+      else
+        @review.liked_by @user
+        redirect_to(action: 'show', controller: 'movies', id: @movie.id)
+        return
+      end
+    end
+
+    def downvote
+      @user = User.find(params[:user_id])
+      @review.unliked_by @user
+      redirect_to(action: 'show', controller: 'movies', id: @movie.id)
+    end
+
 
   	def create
       @review = Review.new(review_params)

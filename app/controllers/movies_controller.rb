@@ -23,7 +23,8 @@ class MoviesController < ApplicationController
     @flag = 0
     @movie = Movie.find(params[:id])
     @user = User.find(session[:user_id])
-    @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
+
+    @reviews = Review.where(movie_id: @movie.id)
     if @reviews.blank?
       @avg_rating = 0
     else

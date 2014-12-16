@@ -1,6 +1,7 @@
 class Review < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :movie
+	acts_as_votable
 
 	validates :rating, :comment, presence: true
 	validates :rating, numericality: {
