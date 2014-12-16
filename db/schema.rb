@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141212093001) do
+ActiveRecord::Schema.define(version: 20141215132308) do
+
+  create_table "movies", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reviews", force: true do |t|
+    t.float    "rating",     limit: 24
+    t.text     "comment"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "movie_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "username",             limit: 25

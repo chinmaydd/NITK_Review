@@ -4,10 +4,12 @@ It is a Rails App where users can login and post reviews and rate latest movies,
 
 == ROADMAP:
 
-1. Add Reviews Feature for each Movie in Mangalore ( /movies/list )
+1. Add Navigation Bar for navigating throughout the Application
 
-2. Add Navigation Bar for navigating throughout the Application
+2. Admin Functionality
 
-3. Admin Functionality
+3. Upvotes for each review
 
-4. GUI improvement( Preferably Polymer.js )
+4. Make faster retrieval of Movies
+
+5. GUI improvement( Preferably Polymer.js )

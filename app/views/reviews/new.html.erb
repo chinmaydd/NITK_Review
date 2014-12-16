@@ -1,0 +1,8 @@
+<h1>New review</h1>
+  
+<%= form_for(:review, url: {action: 'create', movie_id: @movie.id, id: @movie.id}) do |f| %>
+    <%= render(partial: 'form', locals: {f: f}) %>
+   	<%= submit_tag('Write Review') %>
+<% end %>
+
+<%= link_to('Back', {action: 'show', controller: 'movies', id: @movie.id}) %>	

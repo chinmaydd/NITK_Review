@@ -1,0 +1,8 @@
+<h1>Editing review</h1>
+  <%= form_for(:review, url: {action: 'update', movie_id: @movie.id, id: @review.id}) do |f| %>
+    <%= render(partial: 'form', locals: {f: f} ) %>
+  	<%= submit_tag('Edit') %>
+  <% end %>
+  <br>
+<%= link_to("Delete Review", {controller: 'reviews', action: 'destroy', movie_id: @movie.id, id: @review.id}) %>
+<%= link_to('Back', action: 'show', controller: 'movies', id: @movie.id) %>

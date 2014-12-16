@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     
-  before_action :confirm_logged_in, :except => [:attempt_login, :home, :new, :create] 
+  before_action :confirm_logged_in, except: [:attempt_login, :home, :new, :create]
 
   def new
     @user = User.new

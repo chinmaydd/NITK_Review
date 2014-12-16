@@ -1,8 +1,10 @@
 <h1>Movie Listing in Mangalore</h1>
 
-<% @movie.each do |move| %>
-	<%= move %>
-	<br>
+<% @movies.each do |movie| %>
+    <tr>
+      <td><%= link_to( movie.name , {action: 'show', id: movie.id}) %></td>
+    </tr>
+    <br>
 <% end %>
 
 <%= link_to("Back to Dashboard", {action: 'dashboard'}) %>
