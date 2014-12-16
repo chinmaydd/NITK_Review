@@ -4,11 +4,17 @@
 <%= @avg_rating %>
 <br>
 <br>
-<% @reviews.each do |rev| %>
+<% @reviews.order(:cached_votes_up).each do |rev| %>
 	<%= rev.user.username %>
 	<%= rev.comment %>
+	<%= rev.get_likes.size %>	
+	<% if @user.voted_for? rev %>
+		<%= link_to("Remove Vote", {controller: 'reviews', action: 'downvote', movie_id: @movie.id, id: rev.id, user_id: session[:user_id]}) %>
+	<% else %>
+		<%= link_to("Upvote", {controller: 'reviews', action: 'upvote', movie_id: @movie.id, id: rev.id, user_id: session[:user_id]}) %>
+	<% end %>	
 	<% if rev.user.username==session[:username]||@user.admin? %>
-		<%= link_to("Edit Review", {controller: 'reviews', action: 'edit', movie_id: @movie.id, id: rev.id}) %>
+		<%= link_to("Edit Review", {controller: 'reviews', action: 'edit', movie_id: @movie.id, id: rev.id}) %>	
 		<% @flag = 1 %>
 	<% end %>
 <% end %>

@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
 	has_secure_password
-
+	acts_as_voter
 	has_many :reviews
 
 	validates :email, email_format: { message: "This does not look like a valid email address" }, uniqueness: true  #Using gem 'validates_email_format_of'

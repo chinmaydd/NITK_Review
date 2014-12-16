@@ -6,10 +6,6 @@ It is a Rails App where users can login and post reviews and rate latest movies,
 
 1. Add Navigation Bar for navigating throughout the Application
 
-2. Admin Functionality
+2. Make faster retrieval of Movies
 
-3. Upvotes for each review
-
-4. Make faster retrieval of Movies
-
-5. GUI improvement( Preferably Polymer.js )
+3. GUI improvement( Preferably Polymer.js and Gravatars)
