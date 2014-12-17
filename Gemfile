@@ -8,7 +8,7 @@ gem 'rails', '4.1.6'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+# gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -17,10 +17,19 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'nokogiri'
+# parsing html
 
 gem 'bootstrap-material-design'
+# for implementing material design
 
 gem 'acts_as_votable', '~> 0.10.0'
+#for likes and dislikes
+
+gem 'bootstrap-sass', '~> 3.3.1.0'
+# for SASS
+
+gem 'sass-rails', '>= 3.2'
+# for integrating SASS and rails
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

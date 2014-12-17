@@ -1,34 +1,33 @@
-<% if !flash[:notice].blank? %>
-<%= flash[:notice] %>
-<% end %>
+ <% if !flash[:notice].blank? %>
+ <%= flash[:notice] %>
+ <% end %>
 
-<% if session[:user_id]!=nil %>
+ <% if session[:user_id]!=nil %>
 
-<%= redirect_to(controller: 'movies', action: 'dashboard') %>
+ <%= redirect_to(controller: 'movies', action: 'dashboard') %>
 
-<% end %>
+ <% end %>
 
-<% if session[:user_id]==nil %>
+ <% if session[:user_id]==nil %>
 
-<br><h2>User Login here</h2>
+ <br><h2>User Login here</h2>
 
-<%= form_for(:user, url: {action: 'attempt_login'}) do |f| %>
+ <%= form_for(:user, url: {action: 'attempt_login'}) do |f| %>
 
-<table summary="User login field">
-  <tr>
-    <th><%= f.label(:username) %></th>
-    <td><%= f.text_field(:username) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:password) %></th>
-    <td><%= f.password_field(:password) %></td>
-  </tr>
-</table>
+ <table summary="User login field">
+   <tr>
+     <th><%= f.label(:username) %></th>
+     <td><%= f.text_field(:username) %></td>
+   </tr>
+   <tr>
+     <th><%= f.label(:password) %></th>
+     <td><%= f.password_field(:password) %></td>
+   </tr>
+ </table>
 
-<%= submit_tag("Login") %>
+ <%= submit_tag("Login") %>
 
-<%= link_to("New User", {action: 'new'}) %>
+ <%= link_to("New User", {action: 'new'}) %>
 
-<% end %>
-
-<% end %>
+ <% end %>
+ <% end %>

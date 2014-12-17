@@ -122,13 +122,14 @@ DEPENDENCIES
   acts_as_votable (~> 0.10.0)
   bcrypt (~> 3.1.7)
   bootstrap-material-design
+  bootstrap-sass (~> 3.3.1.0)
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
   nokogiri
   rails (= 4.1.6)
-  sass-rails (~> 4.0.3)
+  sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
   spring
   turbolinks
