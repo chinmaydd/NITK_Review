@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   before_action :confirm_logged_in, except: [:attempt_login, :home, :new, :create]
 
   def new
+    if session[:user_id]!=nil
+      redirect_to(action: 'dashboard', controller: 'movies')
+      return 
+    end
+
     @user = User.new
   end
 
@@ -16,6 +21,11 @@ class UsersController < ApplicationController
   end
 
   def create
+    if session[:user_id]!=nil
+      redirect_to(action: 'dashboard', controller: 'movies')
+      return 
+    end
+
     @user = User.new(user_param)
     if @user.save
       session[:user_id] = @user.id
@@ -85,6 +95,12 @@ class UsersController < ApplicationController
       session[:username] = nil
       @user.destroy
       redirect_to(action: 'home')
+    end
+  end
+
+  def home  
+    if session[:user_id]!=nil
+      redirect_to(controller: 'movies', action: 'dashboard')
     end
   end
 

@@ -1,9 +1,7 @@
   Rails.application.routes.draw do
-  
-  get 'movie/dashboard'
-  get 'movies/dashboard'
 
-  root "users#index"
+  root "users#home"
+
   match ':controller(/:action(/:id))', :via => [:get, :post]
 
   
