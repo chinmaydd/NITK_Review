@@ -1,13 +1,81 @@
-<% @page_title = 'User' %>
+<title>Join Us!</title>
 
-<div>
-  <h2>Create User</h2>
+<body style="background-image:url(http://hdwallsize.com/wp-content/uploads/2013/04/Logo-Batman-Wallpaper-HD.jpg);background-repeat:no-repeat;background-size:cover" >
+<div class="container" style="width:900px" >
+<div class="center jumbotron">
+  <h1 style="font-size:50px">Create a profile</h1>
 
-  <%= form_for(:user, url: {action: 'create'}) do |f| %>
+  <%= form_for(:user, url: {action: 'create'}, class: "form-horizontal") do |f| %>
 
-    <%= render(partial: 'form', locals: {f: f} ) %>
+ <div class="row">
+ <div class="col-md-10 col-md-offset-1">
+  <table summary"User Creation Field">
+    
+  	<div class="form-group">
+  	<label for="inputFirstName" class="col-lg-6 control-label">First Name</label>
+  	<div class="col-lg-4">
+     	<%= f.text_field :first_name, :class => "form-control" , :type => "text", :placeholder => "" %>
+ 	</div>
+ 	</div>
 
-  	<%= submit_tag('Create User') %>
+ 	<br>
+ 	<br>
+
+
+ 	<div class="form-group">
+  	<label for="inputLastName" class="col-lg-6 control-label">Last Name</label>
+  	<div class="col-lg-4">
+     	<%= f.text_field :last_name, :class => "form-control" , :type => "text", :placeholder => "" %>
+ 	</div>
+ 	</div>
+
+ 	<br>
+ 	<br>
+
+ 	<div class="form-group">
+  	<label for="inputFirstName" class="col-lg-6 control-label">Email</label>
+  	<div class="col-lg-4">
+     	<%= f.text_field :email, :class => "form-control" , :type => "text", :placeholder => "" %>
+ 	</div>
+ 	</div>
+
+ 	<br>
+ 	<br>
+
+ 	<div class="form-group">
+  	<label for="inputFirstName" class="col-lg-6 control-label">Username</label>
+  	<div class="col-lg-4">
+     	<%= f.text_field :username, :class => "form-control" , :type => "text", :placeholder => "" %>
+ 	</div>
+ 	</div>
+
+ 	<br>
+ 	<br>
+
+ 	<div class="form-group">
+  	<label for="inputFirstName" class="col-lg-6 control-label">Password</label>
+  	<div class="col-lg-4">
+     	<%= f.text_field :password, :class => "form-control" , :type => "password", :placeholder => "" %>
+ 	</div>
+ 	</div>
+
+ 	<br>
+ 	<br>
+
+ 	<%= submit_tag("Create User", :class => "btn btn-info btn-raised") %>
+
+
+ 	<br>
+ 	<br>
+
+ 	<%= link_to("Back to Login", {action: 'home'}, :class => "btn btn-primary btn-raised") %>
+
+  </table>
+
+ 
   <% end %>
 
+</div>
+</div>
+</div>
 </div>

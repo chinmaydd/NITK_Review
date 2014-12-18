@@ -18,6 +18,13 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @current_user = User.find(session[:user_id])
+    @reviews = Review.all
+    @count = 0
+    @reviews.each do |r|
+      if r.user == @user
+        @count+=1
+      end
+    end
   end
 
   def create

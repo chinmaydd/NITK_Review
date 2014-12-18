@@ -1,36 +1,77 @@
-<div class="users edit">
-  <h1>Update Users</h1>
+<title>Got a problem?</title>
+<body style="background-image:url(http://hdwallsize.com/wp-content/uploads/2013/04/Logo-Batman-Wallpaper-HD.jpg);background-repeat:no-repeat;background-size:cover" >
+<div class="container" style="width:900px" >
+<div class="center jumbotron">
+  <h1 style="font-size:50px">Update your profile</h1>
 
-<%= form_for(:user, url: {action: 'update', id: @user.id}) do |f| %>
+  <%= form_for(:user, url: {action: 'update', id: @user.id}, class: "form-horizontal") do |f| %>
 
-<table summary="User form fields">
-  <tr>
-    <th><%= f.label(:first_name) %></th>
-    <td><%= f.text_field(:first_name) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:last_name) %></th>
-    <td><%= f.text_field(:last_name) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:email) %></th>
-    <td><%= f.text_field(:email) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:username) %></th>
-    <td><%= f.text_field(:username) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:password) %></th>
-    <td><%= f.password_field(:password) %></td>
-  </tr>
+ <div class="row">
+ <div class="col-md-10 col-md-offset-1">
+  <table summary"User Creation Field">
+    
+    <div class="form-group">
+    <label for="inputFirstName" class="col-lg-6 control-label">First Name</label>
+    <div class="col-lg-4">
+      <%= f.text_field :first_name, :class => "form-control" , :type => "text", :placeholder => "" %>
+  </div>
+  </div>
 
-</table>
+  <br>
+  <br>
 
-<%= submit_tag("Update User") %>
 
-<%= link_to('Delete User', {action: 'destroy', id: @user.id}) %>
+  <div class="form-group">
+    <label for="inputLastName" class="col-lg-6 control-label">Last Name</label>
+    <div class="col-lg-4">
+      <%= f.text_field :last_name, :class => "form-control" , :type => "text", :placeholder => "" %>
+  </div>
+  </div>
 
-<% end %>
+  <br>
+  <br>
 
+  <div class="form-group">
+    <label for="inputFirstName" class="col-lg-6 control-label">Email</label>
+    <div class="col-lg-4">
+      <%= f.text_field :email, :class => "form-control" , :type => "text", :placeholder => "" %>
+  </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="form-group">
+    <label for="inputFirstName" class="col-lg-6 control-label">Username</label>
+    <div class="col-lg-4">
+      <%= f.text_field :username, :class => "form-control" , :type => "text", :placeholder => "" %>
+  </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="form-group">
+    <label for="inputFirstName" class="col-lg-6 control-label">Password</label>
+    <div class="col-lg-4">
+      <%= f.text_field :password, :class => "form-control" , :type => "password", :placeholder => "" %>
+  </div>
+  </div>
+
+  <br>
+  <br>
+
+  <%= submit_tag("Update User", :class => "btn btn-info btn-raised") %>
+
+  <br>
+  <br>
+
+  <%= link_to('Delete User', {action: 'destroy', id: @user.id}, :class => "btn btn-danger btn-raised") %>
+
+  </table>
+  <% end %>
+
+</div>
+</div>
+</div>
 </div>
