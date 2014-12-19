@@ -67,7 +67,6 @@ class UsersController < ApplicationController
   def logout
     session[:user_id] = nil
     session[:username] = nil
-    flash[:notice] = "You are now logged out"
     render('home')
   end
 

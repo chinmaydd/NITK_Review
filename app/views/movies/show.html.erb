@@ -1,30 +1,56 @@
-<h1>Movie Review Page</h2>
-<%= @movie.name %>
-<br>
-<%= @avg_rating %>
-<br>
-<br>
-<% @reviews.order(:cached_votes_up).each do |rev| %>
-	<%= rev.user.username %>
-	<%= rev.comment %>
-	<%= rev.get_likes.size %>	
-	<% if @user.voted_for? rev %>
-		<%= link_to("Remove Vote", {controller: 'reviews', action: 'downvote', movie_id: @movie.id, id: rev.id, user_id: session[:user_id]}) %>
-	<% else %>
-		<%= link_to("Upvote", {controller: 'reviews', action: 'upvote', movie_id: @movie.id, id: rev.id, user_id: session[:user_id]}) %>
-	<% end %>	
-	<% if rev.user.username==session[:username]||@user.admin? %>
-		<%= link_to("Edit Review", {controller: 'reviews', action: 'edit', movie_id: @movie.id, id: rev.id}) %>	
-		<% @flag = 1 %>
+<title><%= @movie.name %></title>
+<body style="background-image:url(http://images6.fanpop.com/image/photos/33500000/Sherlock-BBC-sherlock-33550383-1600-1067.png);font-family:'Trebuchet MS', Helvetica, sans-serif;background-repeat:no-repeat;background-size:cover">
+
+<div class="container" style="width:700px">
+
+<div class="center jumbotron">
+<h1 style="font-size:40px"><%= @movie.name %></h1>
+
+<% if @avg_rating==0 %>
+	<h3>No reviews yet. You've watched it?</h3>
+	<br>
+	<br>
+<% else %>
+	<h1 style="font-size:40px"><%= @avg_rating %></h2>
+	<br>
+	<br>
+
+	<% @reviews.order(:cached_votes_up).each do |rev| %>
+		<div class="panel panel-default">
+	    <div class="panel-heading">
+	    <h3 class="panel-title">Writer: <%= rev.user.username %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Upvotes: <%= rev.get_likes.size %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    <% if @user.voted_for? rev %>
+			<%= link_to('<button class="btn btn-fab btn-fab-mini btn-material-red"><i class="mdi-hardware-keyboard-arrow-down"></i><div class="ripple-wrapper"></div></button>'.html_safe, {controller: 'reviews', action: 'downvote', movie_id: @movie.id, id: rev.id, user_id: session[:user_id]}) %>
+		<% else %>
+			<%= link_to('<button class="btn btn-fab btn-fab-mini btn-success"><i class="mdi-hardware-keyboard-arrow-up"></i><div class="ripple-wrapper"></div></button>'.html_safe,{controller: 'reviews', action: 'upvote', movie_id: @movie.id, id: rev.id, user_id: session[:user_id]}) %>
+		<% end %>	
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<% if rev.user.username==session[:username]||@user.admin? %>
+			<%= link_to('<button class="btn btn-fab btn-fab-mini btn-raised btn-primary"><i class="mdi-image-edit"></i><div class="ripple-wrapper"></div></button>'.html_safe, {controller: 'reviews', action: 'edit', movie_id: @movie.id, id: rev.id}) %>	
+			<% @flag = 1 %>
+		<% end %></h3>
+	    
+	    </div>
+	    <div class="panel-body">
+	    	<%= rev.comment %>
+	    	<br>
+	    	<br>
+	    	Rating : <%= rev.rating %>	
+	    </div>
+		</div>
 	<% end %>
-<% end %>
-<br>
-
-<% if @flag == 0 %>
-	<%= link_to("Write a Review", {action: 'new' , controller: 'reviews', movie_id: @movie.id}) %>
+	<br>
 <% end %>
 
-<%= link_to("Back to Movie Listing", action: 'list') %>	
-	
+<%= link_to '<button class="btn btn-fab btn-fab-mini btn-raised btn-material-lightyellow"><i class="mdi-content-reply"></i><div class="ripple-wrapper"></div></button>'.html_safe,{action: 'list',controller: 'movies'} %>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<% if @flag == 0 %>	
+	<%= link_to('<button class="btn btn-fab btn-fab-mini btn-raised btn-primary"><i class="mdi-image-edit"></i><div class="ripple-wrapper"></div></button>'.html_safe, {controller: 'reviews', action: 'new', movie_id: @movie.id}) %>	
+	<% end %>
+	</div>
+	</div>
+
+</body>
+
 
 
