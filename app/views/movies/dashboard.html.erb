@@ -1,6 +1,17 @@
-<h1>Dashboard</h1>
-<p>
-<%= link_to("Check all the movies", {action: 'list'})  %>
+<title>Bored?</title>
+<body style="background-image:url(http://fc02.deviantart.net/fs37/f/2009/298/b/9/Pixar___Up___Wallpaper_15_by_pwn247.jpg);font-family:'Trebuchet MS', Helvetica, sans-serif;background-repeat:no-repeat;background-size:cover">
 
-<%= link_to("List of Usernames", {action: 'index', controller: 'users'})  %>
-</p>
+<div class="container" style="width:700px" >
+
+<div class="center jumbotron">
+<h1 style="font-size:30px">Dashboard</h1>
+
+<%= link_to("All the movies", {action: 'list'},:class => "btn btn-default")  %>
+
+<br>
+<br>
+
+<%= link_to("And all the people", {action: 'index', controller: 'users'}, :class => "btn btn-default")  %>
+</div>
+</body>
+

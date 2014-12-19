@@ -1,20 +1,28 @@
-<div class="users index">
-  <h2>Users</h2>
+<title>All the people</title>
+<body style="background-image:url(http://fc02.deviantart.net/fs37/f/2009/298/b/9/Pixar___Up___Wallpaper_15_by_pwn247.jpg);background-repeat:no-repeat;background-size:cover;font-family:'Trebuchet MS', Helvetica, sans-serif" >
 
-  <table summary="Users list">
-    <tr class="header">
-      <th>User Name</th>
-    </tr>
-    <% @users.each do |user| %>
-    <tr>
-      <td><%= link_to( user.username , {action: 'show', id: user.id}) %></td>
-    </tr>
-    <% end %>
-  </table>
+<div class="container" style="width:700px" >
+<div class="center jumbotron">
 
-<%= link_to("Back to Dashbaord", {action: 'dashboard', controller: 'movies'}) %>
+<h1 style="font-size:40px">Folks</h1>
 
-<%= link_to("Logout", {:action => 'logout' })  %>
+<div class="list-group">
+<% @users.each do |user| %>
+
+<h4><%= link_to( user.username ,{action: 'show', id: user.id}, :class => "btn btn-flat btn-default") %></h4>
+<div class="list-group-separator"></div>
+<% end %>
+</div>
+<br>
+<br>
+
+
+<%= link_to '<button class="btn btn-fab btn-raised btn-material-lightyellow"><i class="mdi-content-reply"></i><div class="ripple-wrapper"></div></button>'.html_safe,{action: 'dashboard',controller: 'movies'} %>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<%= link_to '<button class="btn btn-fab btn-raised btn-material-red"><i class="mdi-communication-vpn-key"></i><div class="ripple-wrapper"></div></button>'.html_safe,{action: 'logout',controller: 'users'} %>
+
+
 <br>
 <br>
 <br>

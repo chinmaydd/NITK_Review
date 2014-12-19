@@ -1,11 +1,23 @@
-<h1>Movie Listing in Mangalore</h1>
+<title>Saturday Saturday</title>
+<body style="background-image:url(http://images6.fanpop.com/image/photos/33500000/Sherlock-BBC-sherlock-33550383-1600-1067.png);font-family:'Trebuchet MS', Helvetica, sans-serif;background-repeat:no-repeat;background-size:cover">
 
+<div class="container" style="width:700px" >
+
+<div class="center jumbotron">
+<h1 style="font-size:30px">Them Movies</h1>
+
+<div class="list-group">
 <% @movies.each do |movie| %>
-    <tr>
-      <td><%= link_to( movie.name , {action: 'show', id: movie.id}) %></td>
-    </tr>
-    <br>
+    <h4><%= link_to( movie.name , {action: 'show', id: movie.id}, :class => "btn btn-flat btn-primary") %></h4>
+    <div class="list-group-separator" style="margin-right:100px;width:calc(100% - 100px)"></div>
 <% end %>
 
-<%= link_to("Back to Dashboard", {action: 'dashboard'}) %>
+<br>
+<br>
+
+<%= link_to '<button class="btn btn-fab btn-fab-mini btn-raised btn-material-lightyellow"><i class="mdi-content-reply"></i><div class="ripple-wrapper"></div></button>'.html_safe,{action: 'dashboard',controller: 'movies'} %>
+
+</div>
+</div>
+</body>
 

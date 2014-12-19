@@ -1,8 +1,7 @@
 <title>Who again?</title>
-<body style="background-image:url(http://evansheline.com/wp-content/uploads/2011/09/pixar_luxo.png);background-repeat:no-repeat;background-size:cover" >
+<body style="background-image:url(http://fc02.deviantart.net/fs37/f/2009/298/b/9/Pixar___Up___Wallpaper_15_by_pwn247.jpg);background-repeat:no-repeat;background-size:cover;font-family:'Trebuchet MS', Helvetica, sans-serif" >
 
 <div class="container" style="width:700px" >
-
 <div class="center jumbotron">
 
 <div class="file show">
@@ -21,8 +20,12 @@
 		<br>
 	<% end %>
 
-	<%= link_to("Back to Users list", {action: 'index'}, :class => "btn btn-default btn-raised") %>
+	<br>
+	<br>
+
+	<%= link_to '<button class="btn btn-fab btn-fab-mini btn-raised btn-material-lightyellow"><i class="mdi-content-reply"></i><div class="ripple-wrapper"></div></button>'.html_safe,{action: 'index',controller: 'users'} %>
 </div>
 
 </div>
 </div>
+ 

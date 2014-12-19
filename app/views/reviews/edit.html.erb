@@ -1,8 +1,36 @@
-<h1>Editing review</h1>
-  <%= form_for(:review, url: {action: 'update', movie_id: @movie.id, id: @review.id}) do |f| %>
-    <%= render(partial: 'form', locals: {f: f} ) %>
-  	<%= submit_tag('Edit') %>
-  <% end %>
-  <br>
-<%= link_to("Delete Review", {controller: 'reviews', action: 'destroy', movie_id: @movie.id, id: @review.id}) %>
-<%= link_to('Back', action: 'show', controller: 'movies', id: @movie.id) %>
+<title>Different opinion</title>
+<body style="background-image:url(http://images6.fanpop.com/image/photos/33500000/Sherlock-BBC-sherlock-33550383-1600-1067.png);font-family:'Trebuchet MS', Helvetica, sans-serif;background-repeat:no-repeat;background-size:cover">
+
+<div class="container" style="width:700px" >
+<div class="center jumbotron">
+<h1 style="font-size:30px">Editing Review</h1>
+ 
+<%= form_for(:review, url: {action: 'update', movie_id: @movie.id, id: @movie.id}) do |f| %>
+
+	<label for="textArea" class="col-lg-2 control-label">Review</label>
+	<div class="col-lg-10">
+	<%= f.text_area :comment, :class => "form-control", :rows => "3" %>
+	<span class="help-block">Write short notes(5 marks)</span>
+	</div>
+
+	<label for="rating" class="col-lg-2 control-label">Rating</label>
+	<div class="col-lg-10">
+	<%= f.text_field :rating, :class => "form-control" %>
+	<span class="help-block">Between 1 and 5</span>
+	<br>
+	<br>
+	</div>
+
+
+<button class="btn btn-fab btn-raised btn-sm btn-success" type="submit"><i class="mdi-content-save"></i><div class="ripple-wrapper"></div></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= link_to('<button class="btn btn-fab btn-raised btn-material-red"><i class="mdi-content-clear"></i><div class="ripple-wrapper"></div></button>'.html_safe,{controller: 'reviews', action: 'destroy', movie_id: @movie.id, id: @review.id}) %>
+
+<br>
+<br>
+
+
+<%= link_to '<button class="btn btn-fab btn-fab-mini btn-raised btn-material-lightyellow"><i class="mdi-content-reply"></i><div class="ripple-wrapper"></div></button>'.html_safe,{action: 'show',controller: 'movies', id: @movie.id} %>
+<% end %>
+</div>
+</div>	
+</body>
