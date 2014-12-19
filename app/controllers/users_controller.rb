@@ -56,10 +56,8 @@ class UsersController < ApplicationController
     if authorized_user
       session[:user_id] = authorized_user.id
       session[:username] = authorized_user.username
-      flash[:notice] = "You are now logged in."
       redirect_to(controller: 'movies', action: 'dashboard')
     else
-      flash[:notice] = "Invalid username/password combination."
       redirect_to(action: 'home')
     end
   end
@@ -77,7 +75,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_param)
-      flash[:notice] = "Data Updated Succesfully"
       redirect_to(action: 'show' , id: @user.id)
     else
       render('edit')
