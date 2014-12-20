@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     
-  before_action :confirm_logged_in, except: [:attempt_login, :home, :new, :create]
+  before_action :confirm_logged_in, except: [:attempt_login, :home, :new, :create, :about]
 
   def new
     if session[:user_id]!=nil
@@ -13,6 +13,9 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+  end
+
+  def about
   end
 
   def show
