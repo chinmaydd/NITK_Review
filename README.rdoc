@@ -1,6 +1,6 @@
 == README
 
-It is a Rails App where users can login and post reviews and rate latest movies, games, books, etc.
+It is a Rails App where users can login and post reviews and rate latest movies currently in theatres in Mangalore.
 
 == ROADMAP:
 
